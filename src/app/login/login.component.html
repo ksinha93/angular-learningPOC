@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="validateUser()">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      formControlName="username"
+      id="username"
+      type="text"
+      class="form-control"
+    />
+  </div>
+  <div
+    *ngIf="
+      form.controls['username'].invalid &&
+      (form.controls['username'].touched || form.controls['username'].dirty)
+    "
+  >
+    <div *ngIf="form.controls['username'].errors.required">
+      User Name required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      formControlName="password"
+      id="password"
+      type="text"
+      class="form-control"
+    />
+  </div>
+  <button class="btn btn-primary" type="submit" *ngIf="form.valid">
+    Sign Up
+  </button>
+</form>

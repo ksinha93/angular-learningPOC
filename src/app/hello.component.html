@@ -1,0 +1,37 @@
+<h1>{{ LoginMessage }}</h1>
+<div>
+  <div [element-color]="elementColor">
+    <span>Menu 1</span>&nbsp; <span>88.0</span>&nbsp;
+    <span>
+      <input
+        #Menu1
+        type="checkbox"
+        (change)="onCheckBoxSelect(Menu1.checked)"
+        [checked]="changeMenu"
+      />
+    </span>
+  </div>
+  <div [element-color]="elementColor">
+    <span>Menu 2</span>&nbsp; <span>90.0</span>&nbsp;
+    <span>
+      <input
+        #Menu2
+        type="checkbox"
+        (change)="onCheckBoxSelect(Menu2.checked)"
+        [checked]="changeMenu"
+      />
+    </span>
+  </div>
+  <div>
+    <span>Menu 3</span>&nbsp; <span>46.0</span>&nbsp;
+    <span>
+      <input
+        #Menu3
+        type="checkbox"
+        (change)="onCheckBoxSelect(Menu3.checked)"
+        [checked]="changeMenu"
+      />
+    </span>
+  </div>
+  <button type="button" (click)="getDataMessage()">Show</button>
+</div>
